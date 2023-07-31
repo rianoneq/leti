@@ -1,7 +1,7 @@
 from scripts.main import General
 
 # byid
-print(General('167-513-715 80').main())
+print(General('160-461-141 26').main())
 
 # by points
-# print(LetiParser(266).main())
+# print(General(266).main())
