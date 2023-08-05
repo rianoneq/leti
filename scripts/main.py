@@ -256,7 +256,7 @@ class General:
     self.change_data()
 
     # print(self.competitors_data)
-    message = ''
+    messages = []
     for url in self.coursers_urls:
       try:
         dd = GetCompetitсors(self.snils, course_url=url).main()
@@ -273,7 +273,7 @@ class General:
           else:
             for i in range(1, len(dd) + 1):
               balls += f' {dd[-i]["points"]}'
-          message += f'\n{napr["name"]}\n{len(dd)} человек впереди \nВсего мест: {napr2["amount"]}{balls}'
+          messages.append(f'\n\n{napr["name"]}\n{len(dd)} человек впереди \nВсего мест: {napr2["amount"]}{balls}')
       except:
         continue
-    return message
+    return messages

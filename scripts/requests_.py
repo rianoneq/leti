@@ -19,4 +19,13 @@ def get_course_json(course_url: str) -> list[dict]:
   response = requests.get(course_url, 
                           headers=headers)
   js = json.loads(response.text)
-  return js['data']['list']
+  try:
+    return js['data']['list']
+  except:
+    try:
+      response = requests.get(course_url, 
+                            headers=headers)
+      js = json.loads(response.text)
+      return js['data']['list']
+    except:
+      return []

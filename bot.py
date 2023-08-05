@@ -32,7 +32,8 @@ async def welcome(message: types.Message):
   """
   This handler will be called when user sends `/start` or `/help` command
   """
-  await message.reply(General(166).main())
+  for i in General(266).main():
+    await message.reply(i)
 
 
 @dp.message_handler(commands=['snils'])
@@ -40,8 +41,8 @@ async def welcome(message: types.Message):
   """
   This handler will be called when user sends `/start` or `/help` command
   """
-
-  await message.reply(General('160-461-141 26').main())
+  for i in General('160-461-141 26').main():
+    await message.reply(i)
 
 if __name__ == '__main__':
   executor.start_polling(dp, skip_updates=True)
